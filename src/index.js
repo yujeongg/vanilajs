@@ -12,4 +12,28 @@ const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
 ✅ DO NOT CHANGE .css, or .html files.
 ✅ ALL function handlers should be INSIDE of "superEventHandler"
 */
-const superEventHandler = {};
+const title = document.querySelector("h2");
+
+const superEventHandler = {
+  handleResize: function handleResize() {
+    title.innerHTML = "You just resize!";
+    title.style.color = "purple";
+  },
+  handelAuxClick: function handelAuxClick() {
+    title.innerHTML = "That was a right click!";
+    title.style.color = "peru";
+  },
+  handleMouseOver: function handleMouseOver() {
+    title.innerHTML = "The mouse is here!";
+    title.style.color = "yellowgreen";
+  },
+  handleMouseOut: function handleMouseOut() {
+    title.innerHTML = "The mouse is gone!";
+    title.style.color = "royalblue";
+  }
+};
+
+window.addEventListener("resize", superEventHandler.handleResize);
+window.addEventListener("auxclick", superEventHandler.handelAuxClick);
+window.addEventListener("mouseout", superEventHandler.handleMouseOut);
+window.addEventListener("mouseover", superEventHandler.handleMouseOver);
